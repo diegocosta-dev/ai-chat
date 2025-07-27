@@ -35,7 +35,7 @@ composer require diego-costa/craft-ai-chat
 
 # Install the plugin in Craft CMS
 ./craft plugin/install ai-chat
-
+```
 
 ## Usage
 Render the chat in any template with:
