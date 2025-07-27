@@ -1,8 +1,8 @@
 {% set options = options ?? {} %}
 
 {% set color = options.color ?? '#5219C8' %}
-{% set placeholderText = options.placeholder ?? 'Digite sua mensagem...' %}
-{% set buttonLabel = options.buttonLabel ?? 'Enviar' %}
+{% set placeholderText = options.placeholder ?? 'Enter your message...' %}
+{% set buttonLabel = options.buttonLabel ?? 'Send' %}
 
 <script>
     const CSRF_NAME = '{{ craft.app.config.general.csrfTokenName }}';
