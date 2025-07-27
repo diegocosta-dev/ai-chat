@@ -14,15 +14,16 @@ It allows you to integrate with language models such as **OpenAI**, **OpenRouter
 
 ## Installation
 
-You can install this plugin from the **Plugin Store** or via **Composer**.
+Open `composer.json` in your CraftCMS project and add:
 
-### **From the Plugin Store**
-
-1. Go to the **Plugin Store** in your project's Control Panel.
-2. Search for **"AI Chat"**.
-3. Click **"Install"**.
-
-### **With Composer**
+```json
+"repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/diegocosta-dev/ai-chat.git"
+    }
+]
+```
 
 Run the following commands in your terminal:
 
@@ -31,10 +32,10 @@ Run the following commands in your terminal:
 cd /path/to/my-project
 
 # Add the plugin via Composer
-composer require diego-costa/craft-ai-chat
+ddev composer require diego-costa/craft-ai-chat:dev-main
 
 # Install the plugin in Craft CMS
-./craft plugin/install ai-chat
+ddev craft plugin/install ai-chat
 ```
 
 ## Usage
