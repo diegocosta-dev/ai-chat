@@ -1,0 +1,46 @@
+{
+  "name": "diego-costa/craft-ai-chat",
+  "type": "craft-plugin",
+  "license": "mit",
+  "support": {
+    "email": "diegoarthurdev@gmail.com",
+    "issues": "https://github.com/diegocosta-dev/ai-chat/issues?state=open",
+    "source": "https://github.com/diegocosta-dev/ai-chat",
+    "docs": "https://github.com/diegocosta-dev/ai-chat",
+    "rss": "https://github.com/diegocosta-dev/ai-chat/releases.atom"
+  },
+  "require": {
+    "php": ">=8.2",
+    "craftcms/cms": "^5.6.0"
+  },
+  "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "diegocosta\\craftaichat\\": "src/"
+    }
+  },
+  "extra": {
+    "handle": "ai-chat",
+    "name": "Ai Chat",
+    "developer": "Diego Costa",
+    "documentationUrl": "https://github.com/diegocosta-dev/ai-chat"
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{# @var plugin \diegocosta\craftaichat\Plugin #}
+{# @var settings \diegocosta\craftaichat\models\Settings #}
+
+{% import '_includes/forms.twig' as forms %}
+
+<h2>Settings</h2>
+
+{{ forms.autosuggestField({
+    label: "API Key",
+    instructions: "Enter the API key or use an environment variable.",
+    id: "apiKey",
+    name: "apiKey",
+    value: settings.apiKey,
+    suggestEnvVars: true, 
+    suggestAliases: true
+}) }}
+
+{{ forms.textareaField({
+    label: "Agent Prompt",
+    name: "prompt",
+    value: settings.prompt,
+    instructions: "Set the default behavior of the agent."
+}) }}
+
+{{ forms.selectField({
+    label: "LLM Provider",
+    name: "provider",
+    value: settings.provider,
+    options: [
+        { label: "OpenAI", value: "openai" },
+        { label: "OpenRouter", value: "openrouter" },
+        { label: "Anthropic Claude", value: "anthropic" },
+        { label: "Ollama (Local)", value: "ollama" },
+        { label: "Hugging Face", value: "huggingface" }
+    ],
+    instructions: "Select LLM provider."
+}) }}
+
+{{ forms.textField({
+    label: "Model",
+    name: "model",
+    value: settings.model,
+    instructions: "For example: gpt-4o-mini, meta-llama/llama-3-8b, mistral, claude-3-opus, and others.."
+}) }}
+
+{{ forms.textField({
+    label: "Custom Endpoint",
+    name: "endpoint",
+    value: settings.endpoint,
+    instructions: "If left blank, the provider's default endpoint will be used."
+}) }}
