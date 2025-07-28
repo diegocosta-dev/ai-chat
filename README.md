@@ -51,24 +51,78 @@ You can customize the placeholder text, button label, and chat color rendering:
 
 ```twig
   {{ craft.aichat.render({
-      color: '#e63946',
       placeholder: "Type something...",
       buttonLabel: "Send Now"
   }) }}
 ```
 
-## Overriding Styles via CSS
-You can also override styles directly via your own CSS:
+## Custom CSS Variables
+You can override the appearance of the AI Chat widget using CSS custom properties. Define these globally (e.g., inside :root) or within a specific container.
+
+## 📦 Container
+
+| Variable                 | Description       | Default                         |
+| ------------------------ | ----------------- | ------------------------------- |
+| `--ai-chat-border-color` | Main border color | `#5219C8`                       |
+| `--ai-chat-radius`       | Border radius     | `10px`                          |
+| `--ai-chat-padding`      | Container padding | `10px`                          |
+| `--ai-chat-max-width`    | Max width         | `400px`                         |
+| `--ai-chat-height`       | Fixed height      | `300px`                         |
+| `--ai-chat-bg`           | Background color  | `#fff`                          |
+| `--ai-chat-shadow`       | Box shadow        | `0 4px 8px rgba(0, 0, 0, 0.05)` |
+
+## 💬 Messages Area
+
+| Variable                           | Description                    | Default |
+| ---------------------------------- | ------------------------------ | ------- |
+| `--ai-chat-messages-padding`       | Padding inside message area    | `8px`   |
+| `--ai-chat-messages-margin-bottom` | Space below messages container | `10px`  |
+| `--ai-chat-message-margin-bottom`  | Space between each message     | `8px`   |
+
+## 👤 User Message
+
+| Variable                     | Description | Default   |
+| ---------------------------- | ----------- | --------- |
+| `--ai-chat-user-color`       | Text color  | `#5219C8` |
+| `--ai-chat-user-font-weight` | Font weight | `bold`    |
+
+## 🤖 Bot Message
+
+| Variable                    | Description | Default  |
+| --------------------------- | ----------- | -------- |
+| `--ai-chat-bot-color`       | Text color  | `#000`   |
+| `--ai-chat-bot-font-weight` | Font weight | `normal` |
+
+
+## ⌨️ Input Field
+
+| Variable                  | Description                  | Default |
+| ------------------------- | ---------------------------- | ------- |
+| `--ai-chat-input-gap`     | Gap between input and button | `5px`   |
+| `--ai-chat-input-padding` | Input padding                | `5px`   |
+| `--ai-chat-input-radius`  | Input border radius          | `5px`   |
+
+## 🟦 Send Button
+
+| Variable                       | Description          | Default    |
+| ------------------------------ | -------------------- | ---------- |
+| `--ai-chat-button-padding`     | Button padding       | `5px 10px` |
+| `--ai-chat-button-radius`      | Button border radius | `5px`      |
+| `--ai-chat-button-bg`          | Background color     | `#5219C8`  |
+| `--ai-chat-button-text-color`  | Text color           | `#fff`     |
+| `--ai-chat-button-font-weight` | Font weight          | `bold`     |
+
+## Example
 
 ```css
-  .ai-chat-message.user {
-    color: #000 !important;
-    font-weight: bold;
-  }
-  
-  .ai-chat-message.bot {
-    color: #444 !important;
-  }
+  :root {
+  --ai-chat-border-color: #e63946;
+  --ai-chat-max-width: 500px;
+  --ai-chat-height: 400px;
+  --ai-chat-button-bg: #000;
+  --ai-chat-button-radius: 999px;
+  --ai-chat-user-color: #1D4ED8;
+}
 ```
 
 ## Settings
@@ -81,8 +135,12 @@ Within the Craft CMS control panel, the plugin provides the following settings:
  - Custom Endpoint: Allows you to specify an alternative provider endpoint. 
 
 ## Features
- - Agent Behavior Prompt: Configure the initial system prompt to define the assistant’s tone and personality.
- - Simple Rendering: Include the chat widget with a single line of code: ```{{ craft.aichat.render() }}```.
- - Conversation History: Conversations are saved in the browser's localStorage for 24 hours.
- - Multi-Provider AI Support: Compatible with OpenAI, OpenRouter, Hugging Face, Anthropic, and Ollama.
+
+- 💬 **AI Chat Interface**: Drop-in chat widget ready to use on the frontend.
+- 🧠 **Agent Behavior Prompt**: Define a system prompt to customize your assistant’s tone and purpose.
+- 💾 **LocalStorage History**: Conversations are stored for 24h and restored on reload.
+- 🎨 **Fully Customizable**: Style with CSS variables or pass options to the render function.
+- 🤖 **Multi-Provider Support**: OpenAI, OpenRouter, Anthropic, Hugging Face, Ollama.
+- 🔐 **Secure API Key Input**: Supports environment variables via Craft’s `parseEnv`.
+- 🧩 **Custom Endpoint Support**: Easily plug into self-hosted or proxy APIs.
 

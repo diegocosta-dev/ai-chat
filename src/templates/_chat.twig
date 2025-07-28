@@ -1,83 +1,16 @@
 {% set options = options ?? {} %}
-
-{% set color = options.color ?? '#5219C8' %}
 {% set placeholderText = options.placeholder ?? 'Enter your message...' %}
 {% set buttonLabel = options.buttonLabel ?? 'Send' %}
 
 <script>
-    const CSRF_NAME = '{{ craft.app.config.general.csrfTokenName }}';
-    const CSRF_TOKEN = '{{ craft.app.request.csrfToken }}';
+  const CSRF_NAME = '{{ craft.app.config.general.csrfTokenName }}';
+  const CSRF_TOKEN = '{{ craft.app.request.csrfToken }}';
 </script>
 
 <div id="ai-chat" class="ai-chat-container">
-    <div id="ai-chat-messages" class="ai-chat-messages"></div>
-    <div class="ai-chat-input">
-        <input type="text" id="ai-chat-input" placeholder="{{ placeholderText }}" />
-        <button id="ai-chat-send" class="ai-chat-button">{{ buttonLabel }}</button>
-    </div>
+  <div id="ai-chat-messages" class="ai-chat-messages"></div>
+  <div class="ai-chat-input">
+    <input type="text" id="ai-chat-input" placeholder="{{ placeholderText }}" />
+    <button id="ai-chat-send" class="ai-chat-button">{{ buttonLabel }}</button>
+  </div>
 </div>
-
-<style>
-.ai-chat-container {
-    border: 1px solid {{ color }};
-    border-radius: 10px;
-    padding: 10px;
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.ai-chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 8px;
-    border-bottom: 1px solid {{ color }};
-    margin-bottom: 10px;
-}
-
-.ai-chat-message {
-    margin-bottom: 8px;
-}
-
-.ai-chat-message.user {
-    text-align: right;
-    color: {{ color }};
-    font-weight: bold;
-}
-
-.ai-chat-message.bot {
-    text-align: left;
-    color: #000;
-}
-
-.ai-chat-input {
-    display: flex;
-    gap: 5px;
-}
-
-.ai-chat-input input {
-    flex: 1;
-    padding: 5px;
-    border: 1px solid {{ color }};
-    border-radius: 5px;
-}
-
-.ai-chat-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: {{ color }};
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.ai-chat-button:hover {
-    filter: brightness(0.9);
-}
-</style>
