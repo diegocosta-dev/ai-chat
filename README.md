@@ -3,6 +3,7 @@
 AI Chat is a Craft CMS plugin that adds an AI-powered chat widget to your website frontend.  
 It allows you to integrate with language models such as **OpenAI**, **OpenRouter**, **Hugging Face**, **Anthropic**, and **Ollama**, providing a ready-to-use and highly customizable chat interface.
 
+<img width="1692" height="1561" alt="image" src="https://github.com/user-attachments/assets/f7671550-e199-40b8-bf68-2af3d8ea1a11" />
 ---
 
 ## Requirements
