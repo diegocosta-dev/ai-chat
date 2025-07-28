@@ -115,7 +115,7 @@ You can override the appearance of the AI Chat widget using CSS custom propertie
 ## Example
 
 ```css
-  :root {
+:root {
   --ai-chat-border-color: #e63946;
   --ai-chat-max-width: 500px;
   --ai-chat-height: 400px;
